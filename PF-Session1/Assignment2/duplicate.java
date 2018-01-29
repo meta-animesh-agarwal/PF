@@ -23,7 +23,6 @@ class Duplicate {
 	 int[] removeDuplicate(int input[]) {
 		 
 		 int n = input.length;						//contains the length of input array
-		 int flag = 0; 								//used to check a particular condiation
 		 int count = 1;								//used to count the number of unique elements
 		 int[] uniqueElements = new int[n];			//stores unique elements
 		 
@@ -33,15 +32,13 @@ class Duplicate {
 		 for(int i = 1; i < n; i++) {
 			 for(int j = 0; j < count; j++) {
 				 if(input[i] == uniqueElements[j]) {			//checking each element
-					 flag++;
 					 break;
 				 }
 			 }
-			 if(flag == 0) {						//used to assign the unique element
+			 if(j == count) {						//used to assign the unique element
 				 uniqueElements[count] = input[i];
 				 count++;
 			 }
-			 flag = 0;
 		 }
 			 return Arrays.copyOfRange(uniqueElements, 0, count);				//Function is used to return a sub array
 	 }
