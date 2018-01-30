@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * This class implements algorithm for generating
  * all possible combination of letters in a string.
- * @author satyam bhadoria
+ * @author Animesh Agarwal
  * @version 1.0
  */
 public class GeneratePermutations {
@@ -17,8 +17,8 @@ public class GeneratePermutations {
 	/**
 	 * This method call another method to generate
 	 * permutations.
-	 * @param string - to which combination to be generated.
-	 * @return set - set of all possible combination
+	 * @param {String}string - to which combination to be generated.
+	 * @return {List}set - set of all possible combination
 	 */
 	List<String> generatePermutations (String string) {
 		List<String> set = new ArrayList<String>();			//store set of all possible permutations.
