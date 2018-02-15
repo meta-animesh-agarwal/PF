@@ -1,0 +1,187 @@
+<html>
+	<head>
+		<style>
+			
+			.table{ 
+				margin: 0 auto;
+			}
+			body {
+				background-color: ebebeb;
+			}
+			.td1 {
+				text-align: right;
+				padding-right: 10px;
+				padding-bottom: 15px;
+			}
+			.td2 {
+				padding-left: 10px;
+				padding-bottom: 15px;
+			}
+			.bold {
+				font-weight: bold;
+			}
+			i {
+				border: 1px solid #cfcfcf;
+				padding: 5px 0px;
+				height: 18px;
+				border-right: none;
+				width: 30px;
+				text-align: center;
+			}
+			input[type="text"],input[type="url"],input[type="email"] ,select {
+				margin: -4px;
+				padding: 4px;
+				height: 30px;
+				width: 250px;
+				border: 1px solid #cfcfcf;
+			}
+			textarea {
+				margin: -4px;
+				padding: 4px;
+				width: 250px;
+			    position: relative;
+				top: 20px;
+				border-color: #cfcfcf;
+			}
+			#discription {
+				height: 22px;
+				position: relative;
+				top: -1px;
+				text-align: center;
+				padding: 15px 0px !important;				
+			}
+			.button {
+				background-color: #ec9332;
+				border: none;
+				padding: 10px 20px;
+				color: white;
+				border-radius: 5px;
+			}
+			input:invalid{
+				box-shadow: 0 0 10px red;
+			}
+
+		</style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<h2> Contact Us Today! </h2>
+		<table class="table">
+			<tbody class="tbody">
+				<td class="td1 bold">
+					First Name
+				</td>
+				<td class="td2">
+					<i class="fa fa-user"></i>
+					<input type="text" placeholder="First Name" pattern="[A-Za-z]+">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					Last Name
+				</td>
+				<td class="td2">
+					<i class="fa fa-user"></i>
+					<input type="text" placeholder="Last Name" pattern="[A-Za-z]+">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					E-Mail
+				</td>
+				<td class="td2">
+					<i class="fa fa-envelope"></i>
+					<input type="email" placeholder="E-mail">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					Phone #
+				</td>
+				<td class="td2">
+					<i class="fa fa-phone"></i>
+					<input type="text" placeholder="(845)555-1212" pattern="[0-9]{10}">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					Address
+				</td>
+				<td class="td2">
+					<i class="fa fa-home"></i>
+					<input type="text" placeholder="Address">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					City
+				</td>
+				<td class="td2">
+					<i class="fa fa-home"></i>
+					<input type="text" placeholder="City" pattern="[A-Za-z]+">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					State
+				</td>
+				<td class="td2">
+					<i class="fa fa-list"></i>
+					<select>
+						<option>Please Select Your State<option>
+						<option>U.P.</option>
+						<option>M.P.</option>
+						<option>Haryana.</option>
+						<option>Delhi</option>
+						<option>A.P.</option>
+						<option>Gujarat</option>
+					</select>
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					Zip Code
+				</td>
+				<td class="td2">
+					<i class="fa fa-home"></i>
+					<input type="text" placeholder="Zip Code" pattern="[0-9]{6}">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					Website or Domain Name
+				</td>
+				<td class="td2">
+					<i class="fa fa-globe"></i>
+					<input type="url" placeholder="Website or Domain Name"">
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					Do you have hosting?
+				</td>
+				<td class="td2">
+					<input type="radio" name="host">Yes<br>
+					<input type="radio" name="host">No
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+					Project Description
+				</td>
+				<td class="td2">
+					<i id="discription" class="fa fa-pencil"></i>
+					<textarea rows="3"  placeholder="Project Description"></textarea>
+				</td>
+			</tbody>
+			<tbody>
+				<td class="td1 bold">
+				</td>
+				<td class="td2">
+					<button class="button" type="submit" > Send <span  class="fa fa-paper-plane "></span></button>
+					
+				</td>
+			</tbody>
+		</table>
+	</body>
+</html>
