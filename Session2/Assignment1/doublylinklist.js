@@ -38,7 +38,7 @@ function printforward() {
   div.appendChild(br);
 }
   function printbackward() {
-    
+
     var temp = last;
     while(temp!=null){
       var div = document.createElement("div");
@@ -49,7 +49,6 @@ function printforward() {
       var t = document.createTextNode(temp.data);
       div.appendChild(t);
       document.body.appendChild(div);
-
       temp = temp.previous;
     }
 
