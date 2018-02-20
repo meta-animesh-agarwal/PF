@@ -16,7 +16,6 @@ function new_node() {
     last.next = node;
     }
     last = node;
-    alert("Data entered successfully");
   }
   else {
     alert("data cant be empty");
@@ -25,14 +24,33 @@ function new_node() {
 function printforward() {
   var temp = first;
   while(temp!=null){
-    console.log(temp.data);
+    var div = document.createElement("div");
+    div.style.border = "solid 1px black";
+    div.style.display = "inline-block";
+    div.style.margin = "10px";
+    div.style.padding = "10px";
+    var t = document.createTextNode(temp.data);
+    div.appendChild(t);
+    document.body.appendChild(div);
     temp = temp.next;
   }
+  var br = document.createElement("BR");
+  div.appendChild(br);
 }
   function printbackward() {
+    
     var temp = last;
     while(temp!=null){
-      console.log(temp.data);
+      var div = document.createElement("div");
+      div.style.border = "solid 1px black";
+      div.style.display = "inline-block";
+      div.style.margin = "10px";
+      div.style.padding = "10px";
+      var t = document.createTextNode(temp.data);
+      div.appendChild(t);
+      document.body.appendChild(div);
+
       temp = temp.previous;
     }
+
 }
