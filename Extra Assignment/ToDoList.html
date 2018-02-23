@@ -4,6 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
   </head>
   <body onload="onload()">
     <div class="card" style="width: 100%;border : none;">
@@ -16,7 +17,14 @@
           </div>
           <div class = "col-xl-1">
             <h5>Priority</h5>
-            <input class="form-control input-sm" type="text" id = "priority" name = "priority" value="5"/>
+            <button type="button" id = "priority" class="btn btn-danger btn-block dropdown-toggle" data-toggle="dropdown">5</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="javascript:changePriority(5);">5</a>
+              <a class="dropdown-item" href="javascript:changePriority(4);">4</a>
+              <a class="dropdown-item" href="javascript:changePriority(3);">3</a>
+              <a class="dropdown-item" href="javascript:changePriority(2);">2</a>
+              <a class="dropdown-item" href="javascript:changePriority(1);">1</a>
+            </div>
           </div>
           <div class = "col-xl-2">
             <h5>Date</h5>
@@ -39,7 +47,7 @@
         </div>
         <div class = "row mt-3">
           <div class = "col-xl-6 p-3 col-md-6 col-sm-6" id = "showtask" style = " border-right: solid 2px;">
-            <p id = "current" class = "h6" style="border-bottom:solid 1px;">Current Task</p>
+            <p id = "currentTaskHeading" class = "h6" style="border-bottom:solid 1px;">Current Task</p>
           </div>
           <div class = "col-xl-6 p-3 col-md-6 col-sm-6" id = "showcompletedtask" >
             <p id = "text" class = "h6" style="border-bottom:solid 1px;">Completed Task</p>
