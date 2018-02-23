@@ -6,6 +6,7 @@ var currentTaskHeading= document.getElementById('currentTaskHeading');
 var completeTaskDiv = document.getElementById('showcompletedtask');
 var completeTaskHeading = document.getElementById('text');
 var priorityButton = document.getElementById('priority');
+var sortButton = document.getElementById('sortButton');
 
 //Create new task
 addButton.onclick = function(){
@@ -127,7 +128,7 @@ function moveAndUpdateTask(btn, name){
 
       if(key == name){
         obj.status = 1;
-        obj.completeDate = fetchDate();
+        obj.completeDate = todayDate();
         addToCompleteDiv(key, obj.priorityValue, obj.completeDate);
         removeItemFromCurrent(key);
         localStorage.setItem(key , JSON.stringify(obj));
@@ -145,11 +146,10 @@ function moveAndUpdateTask(btn, name){
     }
   }
 }
-
+// to show tasks on UI after reloading , traversing localStorage
 function onload(){
-  clearall();
   var key;
-  document.getElementById("date").value = fetchDate();
+  document.getElementById("date").value = todayDate();
   for(var i = 0 ; i < localStorage.length ; i++){
     key = localStorage.key(i);
     var obj = JSON.parse(localStorage.getItem(key));
@@ -161,10 +161,30 @@ function onload(){
     }
   }
 }
-function sortAscending(){
+//sorting in descending order
+function sortdescending(sortName){
   clearall();
+  sortButton.innerHTML = sortName;
   var key;
-  document.getElementById("date").value = fetchDate();
+  document.getElementById("date").value = todayDate();
+  for(var i = 0 ; i < localStorage.length ; i++){
+    key = localStorage.key(i);
+    var obj = JSON.parse(localStorage.getItem(key));
+    if(obj.status == 0) {
+      addToCurrentDiv(key,obj.priorityValue,obj.date);
+    }
+    else {
+      addToCompleteDiv(key,obj.priorityValue,obj.date);
+    }
+  }
+}
+
+//sorting tasks in ascending order
+function sortAscending(sortName){
+  clearall();
+  sortButton.innerHTML = sortName;
+  var key;
+  document.getElementById("date").value = todayDate();
   for(var i = localStorage.length - 1; i >= 0 ;i--){
     key = localStorage.key(i);
     var obj = JSON.parse(localStorage.getItem(key));
@@ -176,6 +196,8 @@ function sortAscending(){
     }
   }
 }
+
+//remove all task from UI
 function clearall() {
   var innerDivs = currentTaskDiv.getElementsByTagName("DIV");
   var innerDivs1 = completeTaskDiv.getElementsByTagName("DIV");
@@ -190,7 +212,9 @@ function clearall() {
        innerDivs1[0].remove();
   }
 }
-function fetchDate() {
+
+//calculate and returns today's date
+function todayDate() {
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1;
@@ -204,6 +228,8 @@ function fetchDate() {
   today = yyyy+"-"+mm+"-"+dd;
   return today;
 }
+
+//removes respective task from current list
 function removeItemFromCurrent(taskName) {
   var innerDivs = currentTaskDiv.getElementsByTagName("DIV");
   for(var i = 0 ; i < innerDivs.length ; i++)
@@ -214,6 +240,8 @@ function removeItemFromCurrent(taskName) {
      }
   }
 }
+
+//removes respective task from completed list
 function removeItemFromCompleted(taskName) {
   var innerDivs = completeTaskDiv.getElementsByTagName("DIV");
   for(var i = 0 ; i < innerDivs.length ; i++)
@@ -225,6 +253,8 @@ function removeItemFromCompleted(taskName) {
      }
   }
 }
+
+//removes repesctive task
 function deletetask(btn,taskvalue){
   if(confirm("want's to delete task : "+taskvalue)){
     var innerDivs = currentTaskDiv.getElementsByTagName("DIV");
