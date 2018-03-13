@@ -1,5 +1,10 @@
 package com.metacube.shoppingcart.enumm;
 
+/**
+ * This enum is for database type
+ * @author Animesh Agarwal
+ *
+ */
 public enum DatabaseEnum {
-	in_memory, sql;
+	IN_MEMORY, SQL;
 }

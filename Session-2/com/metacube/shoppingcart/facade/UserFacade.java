@@ -18,7 +18,7 @@ import com.metacube.shoppingcart.enumm.DatabaseEnum;
  */
 public class UserFacade {
 	private static UserFacade userFacade;
-	private BaseDao<User> userDao = (InMemoryUserDao) UserDaoFactory.getInstance(DatabaseEnum.in_memory);
+	private BaseDao<User> userDao = UserDaoFactory.getInstance(DatabaseEnum.IN_MEMORY);
 
 	/**
 	 * private constructor to restrict creating new objects.
@@ -44,7 +44,7 @@ public class UserFacade {
 	public void addItem(User user) {
 
 		if(!searchUser(user.getId())){
-			userDao.addItem(user);
+			((InMemoryUserDao) userDao).addItem(user);
 		}
 	}
 
@@ -55,7 +55,7 @@ public class UserFacade {
 	public void removeItem(String userId) {
 
 		if(searchUser(userId)){
-			userDao.removeItem(getUser(userId));
+			((InMemoryUserDao) userDao).removeItem(getUser(userId));
 		}
 	}
 
