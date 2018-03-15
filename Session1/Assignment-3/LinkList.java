@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /*
  * This file contains a class for SinglyLinkKist
  */
@@ -48,7 +50,7 @@ public class LinkList {
 		else {
 			
 			/* Used to traverse the list to the position needed */
-			for(int i = 1; (i < position - 1); i++) {
+			for(int i = 1; (i < position - 1) && (start != null); i++) {
 				start = start.next;
 			}
 			
@@ -78,13 +80,16 @@ public class LinkList {
 	 */
 	void removeElementByData(int data) {
 		Node start = startNode;
-		
+	
 		/*Searching for the data to be removed*/
 		while(start.next != null) {
 			if(start.next.data == data) {
 				break;
 			}
 			start = start.next;
+		}
+		if((start==lastNode) && (start.data != data)) {
+			throw new NoSuchElementException();
 		}
 		start.next = start.next.next;
 	}
@@ -95,14 +100,15 @@ public class LinkList {
 	 */
 	void removeElementByIndex(int position) {
 		Node start = startNode;
+		int i;
 		
 		/* Used to traverse the list to the position needed */
-		for(int i = 1; (i < position) && (start != null); i++) {
+		for(i = 1; (i < position) && (start != null); i++) {
 			start = start.next;
 		}
 		
 		/* checking for index out of bound */
-		if(start != null) {
+		if((start != null) && (i <= position)) {
 			start.next = start.next.next;
 		}
 		else {
@@ -198,12 +204,16 @@ public class LinkList {
 	/**
 	 * Function used to show the list
 	 */
-	void display() {
+	int[] show() {
+		int size = getSize();
 		Node tempStart = startNode;
+		int[] linkList = new int[size];					//temp array used to store the link list	
 		
-		while(tempStart != null) {
-			System.out.println(tempStart.data);
+		/*initializing the array*/
+		for(int i = 0; i < size; i++) {
+			linkList[i] = tempStart.data;
 			tempStart = tempStart.next;
 		}
+		return linkList;
 	}
 }
