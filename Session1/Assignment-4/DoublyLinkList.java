@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /*
  * This file contains a class for doublyLinkList
  */
@@ -90,15 +92,25 @@ public class DoublyLinkList {
 		Node start = startNode;
 		
 		/*Searching for the data to be removed*/
-		while(start!=null){
+		while(start.next != null){
 			if(start.data == data){
 				break;
 			}
 			start = start.next;
 		}
-		
-		start.previous.next = start.next;
-		start.next.previous = start.previous;
+		if((start == lastNode) && (start.data != data)) {
+			throw new NoSuchElementException();
+		}
+		if(start == startNode){
+			startNode = start.next;
+		}
+		if(start != lastNode){
+			start.previous.next = start.next;
+			start.next.previous = start.previous;
+		}
+		else{
+			start.previous.next = null;
+		}
 	}
 	
 	/**
@@ -110,7 +122,7 @@ public class DoublyLinkList {
 		int i;
 		
 		/* Used to traverse the list to the position needed */
-		for(i = 1; (i < position)&&(start != null) ; i++){
+		for(i = 1; (i < position) && (start != null) ; i++){
 			start = start.next;
 		}
 		
@@ -208,12 +220,17 @@ public class DoublyLinkList {
 	/**
 	 * Function used to show the list
 	 */
-	void show(){
-		Node start = startNode;
-		while(start != null){
-			System.out.println(start.data);
-			start = start.next;
+	int[] show(){
+		int size = getSize();
+		Node tempStart = startNode;
+		int[] linkList = new int[size];					//temp array used to store the link list	
+		
+		/*initializing the array*/
+		for(int i = 0; i < size; i++) {
+			linkList[i] = tempStart.data;
+			tempStart = tempStart.next;
 		}
+		return linkList;
 	}
 	
 }
