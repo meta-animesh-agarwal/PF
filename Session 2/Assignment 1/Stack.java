@@ -22,8 +22,7 @@ public class Stack {
 		if(top != null) {
 			newNode.next = top;
 		}
-		
-		top =newNode;
+		top = newNode;
 	}
 	
 	/**
@@ -45,6 +44,4 @@ public class Stack {
 			throw new ArrayIndexOutOfBoundsException();
 		}
 	}
-	
-
 }
