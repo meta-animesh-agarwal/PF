@@ -1,0 +1,87 @@
+
+.clock {
+  position : absolute;
+  top : 0px;
+  left : 50%;
+  height : 200px;
+}
+.div1 {
+   transform: rotate(30deg);
+}
+.span1 {
+  transform: rotate(-30deg);
+}
+.div2 {
+   transform: rotate(60deg);
+}
+.span2 {
+  transform: rotate(-60deg);
+}
+.div3 {
+   transform: rotate(90deg);
+}
+.span3 {
+  transform: rotate(-90deg);
+}
+.div4 {
+   transform: rotate(120deg);
+}
+.span4 {
+  transform: rotate(-120deg);
+}
+.div5 {
+   transform: rotate(150deg);
+}
+.span5 {
+  transform: rotate(-150deg);
+}
+.div6 {
+   transform: rotate(180deg);
+}
+.span6 {
+  transform: rotate(-180deg);
+}
+.div7 {
+   transform: rotate(-150deg);
+}
+.span7 {
+  transform: rotate(150deg);
+}
+.div8 {
+   transform: rotate(-120deg);
+}
+.span8 {
+  transform: rotate(120deg);
+}
+.div9 {
+   transform: rotate(-90deg);
+}
+.span9 {
+  transform: rotate(90deg);
+}
+.div10 {
+   transform: rotate(-60deg);
+}
+.span10 {
+  transform: rotate(60deg);
+}
+.div11 {
+   transform: rotate(-30deg);
+}
+.span11 {
+  transform: rotate(30deg);
+}
+.hourHand {
+  width: 65px;
+  position: absolute;
+  top: 93px;
+  left: 660px;
+  transform: rotate(0deg) translate(-50% ,-50%);
+}
+.minHand {
+  width: 80;
+  position: absolute;
+  top: 93px;
+  left: 654px;
+  transform: rotate(0deg) translate(-50% ,-50%);
+}
