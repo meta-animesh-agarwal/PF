@@ -10,9 +10,6 @@ import java.util.List;
  */
 public class Counselling {
 	
-	//queue to store candidates after college have been allotted
-	QueueImplementation allottedColleges;
-	
 	/**
 	 * this method is assigning the college as per the candidate's choice
 	 * @param {List<College>}collegeList - list of colleges
