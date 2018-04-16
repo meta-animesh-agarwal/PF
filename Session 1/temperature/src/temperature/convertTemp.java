@@ -8,7 +8,7 @@ import javax.jws.WebService;
 
 /**
  * This class contains a function to convert temperature units
- * @author Amit Sharma
+ * @author Animesh Agarwal
  *
  */
 @WebService
