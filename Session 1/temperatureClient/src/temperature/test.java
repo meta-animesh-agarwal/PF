@@ -6,7 +6,7 @@ import javax.xml.rpc.ServiceException;
 
 /**
  * a client class to test the web service convertTemp
- * @author Amit Sharma
+ * @author Animesh Agarwal
  *
  */
 public class test {
