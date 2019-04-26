@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>
+    Radio and select Combinations
+  </title>
+</head>
+<body>
+  <select id="optn1">
+    <option value="-1">--Select something--</option>
+    <option value="delhi">Delhi</option>
+    <option value="mumbai">Mumbai</option>
+  </select>
+  <label for="select1">Display list 1</label>
+  <input type="radio" id="select1" name="selectOptn" value="optn1" onclick="display()"><br>
+  <select id="optn2">
+    <option value="-1">--Select something--</option>
+    <option value="chennai">Chennai</option>
+    <option value="kolkata">Kolkata</option>
+  </select>
+  <label for="select2">Display list 2</label>
+  <input type="radio" id="select2" name="selectOptn" value="optn2" onclick="display()"><br>
+
+  <script>
+    var optn=document.getElementsByName("selectOptn");              //to get the list of all radio buttons
+    function display(){
+      for(var i=0;i<optn.length;i++){
+        if(optn[i].checked){
+          var res=document.getElementById(optn[i].value).value;     //get the value of the respective select field
+          if(res != "-1"){                                          // to check if user has selected any value other than default
+            alert(res);
+          } else {
+            alert("please select an option from the list");
+          }
+        }
+      }
+    }
+
+    //to reset radio buttons on change of the select options
+    document.getElementById("optn1").addEventListener("change",function(){
+      document.getElementById("select1").checked=false;
+      document.getElementById("select2").checked=false;
+    });
+    document.getElementById("optn2").addEventListener("change",function(){
+      document.getElementById("select1").checked=false;
+      document.getElementById("select2").checked=false;
+    });
+    </script>
+
+  </body>
+  </html>
